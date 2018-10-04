@@ -3,5 +3,8 @@
     <textarea [(ngModel)]="jsonData" name="jsonData" id="jsonData" placeholder="Paste your json data. Remember that it has to be a list..." rows="10"></textarea>
     <button type="submit">SLUGIFY JSON</button>
   </form>
-  <p>{{errorMessage}}</p>
+  <p style="color: red;">{{errorMessage}}</p>
+  <p>
+    {{finalData}}
+  </p>
 </div>

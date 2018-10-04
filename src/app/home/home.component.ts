@@ -26,14 +26,19 @@ export class HomeComponent implements OnInit {
 
   static suglifyList (convertedData) {
     const finalData = [];
+    const listUrls = [];
     for (const item of convertedData) {
       const new_item = {
-        'categoria': this.suglifyString(item['categoria']),
-        'tema': this.suglifyString(item['tema']),
-        'url-slug': this.suglifyString(item['pregunta']),
-        'pregunta': item['pregunta']
+        'categoria': item['categoria'],
+        'slug-categoria': this.suglifyString(item['categoria']),
+        'tema': item['tema'],
+        'slug-tema': this.suglifyString(item['tema']),
+        'url-tema': '/' + this.suglifyString(item['categoria']) + '/' + this.suglifyString(item['tema']) + '/',
+        'pregunta': item['pregunta'],
+        'slug-pregunta': this.suglifyString(item['pregunta'])
       };
       finalData.push(new_item);
+      listUrls.push(new_item['url-slug']);
     }
     return finalData;
   }
@@ -53,9 +58,10 @@ export class HomeComponent implements OnInit {
   }
 
   convertJsonAndCreateUrls () {
+    this.finalData = '';
     const convertedData = this.convertToJson();
     if (convertedData && Array.isArray(convertedData)) {
-      this.finalData = HomeComponent.suglifyList(convertedData);
+      this.finalData = JSON.stringify(HomeComponent.suglifyList(convertedData));
       console.log('finalData: ', this.finalData);
     } else {
       this.errorMessage = 'Error al convertir JSON. Verifica el valor ingresado';
