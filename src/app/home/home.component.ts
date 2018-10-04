@@ -8,14 +8,16 @@ import slugify from 'slugify';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
-    this.jsonData = '';
-    this.errorMessage = '';
-  }
-
   public jsonData: string;
   public finalData: any;
   public errorMessage: string;
+  public stringData: string;
+
+  constructor() {
+    this.jsonData = '';
+    this.errorMessage = '';
+    this.stringData = '';
+  }
 
   static suglifyString (str) {
     return slugify(str, {
@@ -68,4 +70,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  convertToUrl () {
+    this.finalData = HomeComponent.suglifyString(this.stringData);
+  }
+
+  cleanResponse () {
+    this.errorMessage = '';
+    this.finalData = '';
+  }
 }

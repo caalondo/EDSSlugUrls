@@ -1,10 +1,23 @@
 <div class="main-container">
   <form (ngSubmit)="convertJsonAndCreateUrls()">
-    <textarea [(ngModel)]="jsonData" name="jsonData" id="jsonData" placeholder="Paste your json data. Remember that it has to be a list..." rows="10"></textarea>
+    <textarea [(ngModel)]="jsonData" name="jsonData" id="jsonData" placeholder="Paste your json data here. Remember that it has to be a list..." rows="10"></textarea>
     <button type="submit">SLUGIFY JSON</button>
   </form>
+  <br><br>
+  <form (ngSubmit)="convertToUrl()">
+    <textarea [(ngModel)]="stringData" name="stringData" id="stringData" placeholder="Paste your string here..." rows="3"></textarea>
+    <button type="submit">SLUGIFY TEXTO</button>
+  </form>
+
   <p style="color: red;">{{errorMessage}}</p>
+  <br>
+  <div class="title-response">
+    <h3><strong>RESPUESTA </strong></h3>
+    <button (click)="cleanResponse()">LIMPIAR</button>
+  </div>
+  <hr>
   <p>
+    => <br>
     {{finalData}}
   </p>
 </div>

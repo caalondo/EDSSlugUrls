@@ -4,3 +4,9 @@
 .main-container textarea {
   width: 100%;
 }
+.title-response h3 {
+  display: inline;
+}
+.title-response button {
+  float: right;
+}
