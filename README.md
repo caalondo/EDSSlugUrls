@@ -1,27 +1,45 @@
 # SlugUrls
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+Project for converting names of categories, topics and questions into friendly urls. This is developed for "Ecosistema de Servicio al cliente" project in Bancolombia S.A.
 
-## Development server
+## Example
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Use this kind of structure in the main input
+```json
+[
+	{
+		"categoria": "producto",
+		"tema": "TARJETA DE CRÉDITO",
+		"pregunta": "Si realizo un avance diferido a una cuota o lo pago dentro de la primera facturación, ¿por qué me genera intereses corrientes?"},	
 
-## Code scaffolding
+	{
+		"categoria": "producto",
+		"tema": "TARJETA DE CRÉDITO",
+		"pregunta": "¿A dónde me llega el saldo que me devuelven por compras reversadas?"
+	}
+]
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You will see this response:
+```json
+[
+  {
+    "categoria": "producto",
+    "slug-categoria": "producto",
+    "tema": "TARJETA DE CRÉDITO",
+    "slug-tema": "tarjeta-de-credito",
+    "url-tema": "/producto/tarjeta-de-credito/",
+    "pregunta": "Si realizo un avance diferido a una cuota o lo pago dentro de la primera facturación, ¿por qué me genera intereses corrientes?",
+    "slug-pregunta": "si-realizo-un-avance-diferido-a-una-cuota-o-lo-pago-dentro-de-la-primera-facturacion-por-que-me-genera-intereses-corrientes"
+  },
+  {
+    "categoria": "producto",
+    "slug-categoria": "producto",
+    "tema": "TARJETA DE CRÉDITO",
+    "slug-tema": "tarjeta-de-credito",
+    "url-tema": "/producto/tarjeta-de-credito/",
+    "pregunta": "¿A dónde me llega el saldo que me devuelven por compras reversadas?",
+    "slug-pregunta": "a-donde-me-llega-el-saldo-que-me-devuelven-por-compras-reversadas"
+  }
+]
+```
