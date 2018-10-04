@@ -10,9 +10,9 @@ Use this kind of structure in the main input
 	{
 		"categoria": "producto",
 		"tema": "TARJETA DE CRÉDITO",
-		"pregunta": "Si realizo un avance diferido a una cuota o lo pago dentro de la primera facturación, ¿por qué me genera intereses corrientes?"},	
-
-	{
+		"pregunta": "Si realizo un avance diferido a una cuota o lo pago dentro de la primera facturación, ¿por qué me genera intereses corrientes?"
+	},	
+  {
 		"categoria": "producto",
 		"tema": "TARJETA DE CRÉDITO",
 		"pregunta": "¿A dónde me llega el saldo que me devuelven por compras reversadas?"
